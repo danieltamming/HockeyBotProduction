@@ -108,7 +108,7 @@ def get_prediction(usr_input):
 	return converter.get_words()
 
 
-token_file = 'data/tokens.txt'
+token_file = 'tokens.txt'
 checkpoint_file = 'checkpoint600pad.pth.tar'
 input_length = 5
 lstm_dim = 128
