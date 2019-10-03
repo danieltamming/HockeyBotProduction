@@ -1,5 +1,7 @@
 # HockeyBotProduction
-Code that runs HockeyBot on a Heroku server. 
+Code that runs HockeyBot, a Facebook Messenger chatbot, on a Heroku server. 
+
+HockeyBot assumes that the words is receives from the user are the beginning of an NHL player or coach's interview. It responds with that message, continued for 5 sentences from a generic player/coach.
 
 HockeyBot is powered by an LSTM that was trained on NHL interview transcripts scraped from [ASAP Sports](http://www.asapsports.com/). 
 
