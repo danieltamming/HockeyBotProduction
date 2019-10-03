@@ -1,3 +1,4 @@
+import os
 import time
 import requests
 import numpy as np
@@ -119,8 +120,8 @@ model.eval()
 load_checkpoint(model)
 
 FB_API_URL = 'https://graph.facebook.com/v2.6/me/messages'
-PAGE_ACCESS_TOKEN = 'EAAG6g1Qk10kBAMJHVMz3hIP8BNtZCWSRm7X1v1ZBFzdiuVdhdRM7cRkLN6B3BfXMKaob66R0XVVPTZCDYuvs6TMbKTDh5hZAwWjlmeyFCRNkQhaeZCiA4VFZCKOgM4ltfDJ25qot2ulJty8Evt81wvtZCUkMqf6l4EF1lrwDUZCHSGKwbx4xoX1ZC'
-VERIFY_TOKEN = 'paiiitEeiCkVvVr8sybZanx7bvWhIJ6XMelzmH9NnyM'
+ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 
 app = Flask(__name__)
 
@@ -128,7 +129,7 @@ def send_message(recipient_id, text):
     """Send a response to Facebook"""
     payload = {'message':{'text': text}, 'recipient': {'id': recipient_id}, 
     			'notification_type': 'regular'}
-    auth = {'access_token': PAGE_ACCESS_TOKEN}
+    auth = {'access_token': ACCESS_TOKEN}
     response = requests.post(FB_API_URL, params=auth, json=payload)
     return response.json()
 
