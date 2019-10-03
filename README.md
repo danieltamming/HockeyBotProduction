@@ -1,5 +1,5 @@
 # HockeyBotProduction
-Code to that runs HockeyBot on a Heroku server. 
+Code that runs HockeyBot on a Heroku server. 
 
 HockeyBot is powered by an LSTM that was trained on NHL interview transcripts scraped from [ASAP Sports](http://www.asapsports.com/). 
 
