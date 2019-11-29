@@ -131,7 +131,6 @@ def send_message(recipient_id, text):
     			'notification_type': 'regular'}
     auth = {'access_token': ACCESS_TOKEN}
     response = requests.post(FB_API_URL, params=auth, json=payload)
-    print(response.json())
     return response.json()
 
 def verify_webhook(req):
@@ -144,7 +143,6 @@ def respond(sender, message):
     """Formulate a response to the user and
     pass it on to a function that sends it."""
     response = get_prediction(message)
-    print(response)
     send_message(sender, response)
 
 
@@ -163,7 +161,6 @@ def listen():
 		file = request.json
 		event = file['entry'][0]['messaging']
 		for x in event:
-			print(x)
 			if is_user_message(x):
 				text = x['message']['text']
 				sender_id = x['sender']['id']
