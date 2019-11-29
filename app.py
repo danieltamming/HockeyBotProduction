@@ -161,8 +161,11 @@ def listen():
 		file = request.json
 		event = file['entry'][0]['messaging']
 		for x in event:
+			print(x)
 			if is_user_message(x):
 				text = x['message']['text']
 				sender_id = x['sender']['id']
+				print(text)
+				print(sender_id)
 				respond(sender_id, text)
 		return 'ok'
